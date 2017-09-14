@@ -42,13 +42,15 @@ class Contact
     end
   end
 
-  # def self.delete(del_name)
-  #   @@list.each do |contact|
-  #       contact.first_name = ""
-  #       contact.last_name = ""
-  #     end
-  #   end
-  # end
+  def self.delete(id)
+    contact_id = id.to_i()
+    @@list.map do |contact|
+      if contact.id == contact_id
+        contact.first_name = ""
+        contact.last_name = ""
+      end
+    end
+  end
 
   # def self.sort()
   #   @@list.last_name.sort

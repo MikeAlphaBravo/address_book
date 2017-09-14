@@ -24,12 +24,19 @@ post('/') do
   contact = Contact.new(first_name, last_name, job_title, company, type, phone_number, street_address, city, state, zip)
 
   contact.save()
-
+  @list = Contact.all()
   # @list = Contact.sort
   erb(:input)
 end
 
 get('/contacts/:id') do
   @contact = Contact.find(params[:id])
+  erb(:output)
+end
+
+post('/contacts/:id') do
+  @contact = Contact.find(params[:id])
+  Contact.delete(@contact.id)
+  redirect '/'
   erb(:output)
 end

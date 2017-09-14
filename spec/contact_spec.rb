@@ -30,6 +30,15 @@ describe("Contact") do
     end
   end
 
+  describe(".delete") do
+    it("locates the contact by its id index and sets the first and last name variables equal to empty strings") do
+      contact = Contact.new("Keegan", "Ruebling", "job_title", "company", "type", "phone_number", "street_address", "city", "state", "zip")
+      contact.save()
+      Contact.delete(contact.id)
+      expect(Contact.all[0].first_name()).to(eq(""))
+    end
+  end
+
   describe("#attr_accessor") do
       it("reads the instance variable") do
         contact = Contact.new("Keegan", "Ruebling", "job_title", "company", "type", "phone_number", "street_address", "city", "state", "zip")
