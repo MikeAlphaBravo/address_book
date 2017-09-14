@@ -14,6 +14,7 @@ _Create..._
 |--------|-------------------------------------------|-----------------------------------------------------------|--------------------|
 | .all   | initial array                             | []                                                        | []                 |
 | clear  | empties the array                         | ["name", "phone"]                                         | []                 |
+| id     | assigns each contact a unique id          | ["name", "phone"]                                         | [1]                |
 | save   | adds variable to array                    | contact  = Contact.new("Michael")                         | ["Michael"]        |
 | update | changes exisiting contact                 | contact = Contact.new("Michael") contact.update("Keegan") | ["Keegan"]         |
 | delete | changes exisiting contact to empty string | contact = Contact.new("Michael") contact.delete           | [""]               |

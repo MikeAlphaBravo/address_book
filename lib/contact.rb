@@ -1,7 +1,7 @@
 class Contact
   @@list = []
   attr_reader :id
-  attr_accessor :first_name :last_name :job_title :company :type :phone_number :street_address :city :state :zip
+  attr_accessor :first_name, :last_name, :job_title, :company, :type, :phone_number, :street_address, :city, :state, :zip
 
   def initialize(first_name, last_name, job_title, company, type, phone_number, street_address, city, state, zip)
     @first_name = first_name
@@ -20,5 +20,38 @@ class Contact
   def self.all()
     @@list
   end
+
+  def self.clear()
+    @@list = []
+  end
+
+  def self.find(id)
+    contact_id = id.to_i()
+    @@list.each do |contact|
+      if contact.id == contact_id
+        return contact
+      end
+    end
+  end
+
+  def save()
+    if @@list.all? do |contact|
+      self.first_name != "" and self.last_name != ""
+      end
+      @@list.push(self)
+    end
+  end
+
+  # def self.delete(del_name)
+  #   @@list.each do |contact|
+  #       contact.first_name = ""
+  #       contact.last_name = ""
+  #     end
+  #   end
+  # end
+
+  # def self.sort()
+  #   @@list.last_name.sort
+  # end
 
 end
