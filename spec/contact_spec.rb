@@ -65,6 +65,17 @@ describe("Contact") do
     end
   end
 
+  describe("#sort") do
+    it("sorting the contact objects by their last_name variables") do
+      contact1 = Contact.new("Keegan", "Ruebling", "job_title", "company", "type", "phone_number", "street_address", "city", "state", "zip")
+      contact1.save()
+      contact2 = Contact.new("Michael", "Brooks", "job_title", "company", "type", "phone_number", "street_address", "city", "state", "zip")
+      contact2.save()
+      Contact.sort()
+      expect(Contact.all()).to(eq([contact2, contact1]))
+    end
+  end
+
   describe(".find") do
     it("finds an contact based on its id") do
       contact = Contact.new("Keegan", "Ruebling", "job_title", "company", "type", "phone_number", "street_address", "city", "state", "zip")
