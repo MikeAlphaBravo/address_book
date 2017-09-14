@@ -24,8 +24,7 @@ post('/') do
   contact = Contact.new(first_name, last_name, job_title, company, type, phone_number, street_address, city, state, zip)
 
   contact.save()
-  @list = Contact.all()
-  # @list = Contact.sort
+  @list = Contact.sort
   erb(:input)
 end
 
@@ -37,6 +36,7 @@ end
 post('/contacts/:id') do
   @contact = Contact.find(params[:id])
   Contact.delete(@contact.id)
+  @list = Contact.sort
   redirect '/'
   erb(:output)
 end

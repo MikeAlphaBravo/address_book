@@ -52,8 +52,8 @@ class Contact
     end
   end
 
-  # def self.sort()
-  #   @@list.last_name.sort
-  # end
+  def self.sort()
+    @@list.sort_by! {|x| x.last_name}
+  end
 
 end
