@@ -10,21 +10,14 @@ _Create..._
 
 ## Specs
 
-\begin{table}[]
-\centering
-\caption{My caption}
-\label{my-label}
-\begin{tabular}{llll}
-name   & Describe                                  & Input                                                                                               & Output                                                       \\
-.all   & initial array                             & {[}{]}                                                                                              & {[}{]}                                                       \\
-clear  & empties the array                         & {[}"name", "phone"{]}                                                                               & {[}{]}                                                       \\
-save   & adds variable to array                    & contact  = Contact.new("Michael")                                                                   & {[}"Michael"{]}                                              \\
-update & changes exisiting contact                 & \begin{tabular}[c]{@{}l@{}}contact = Contact.new("Michael")\\ contact.update("Keegan")\end{tabular} & {[}"Keegan"{]}                                               \\
-delete & changes exisiting contact to empty string & \begin{tabular}[c]{@{}l@{}}contact = Contact.new("Michael")\\ contact.delete\end{tabular}           & {[}""{]}                                                     \\
-sort   & orders list alphabetically by last name   & \begin{tabular}[c]{@{}l@{}}contact = Contact.new("Michael" "Keegan")\\ contact.sort\end{tabular}    & \begin{tabular}[c]{@{}l@{}}"Keegan"\\ "Michael"\end{tabular}
-\end{tabular}
-\end{table}
-
+| name   | Describe                                  | Input                                                     | Output             |
+|--------|-------------------------------------------|-----------------------------------------------------------|--------------------|
+| .all   | initial array                             | []                                                        | []                 |
+| clear  | empties the array                         | ["name", "phone"]                                         | []                 |
+| save   | adds variable to array                    | contact  = Contact.new("Michael")                         | ["Michael"]        |
+| update | changes exisiting contact                 | contact = Contact.new("Michael") contact.update("Keegan") | ["Keegan"]         |
+| delete | changes exisiting contact to empty string | contact = Contact.new("Michael") contact.delete           | [""]               |
+| sort   | orders list alphabetically by last name   | contact = Contact.new("Michael" "Keegan") contact.sort    | "Keegan" "Michael" |
 
 ## Setup/Installation Requirements
 
